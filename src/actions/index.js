@@ -16,7 +16,22 @@ export function displayCustomer(customers){
         customers:customers
     }
 }
+export function loadOrders(customerId){
+    return(dispatch)=>{
+        return axios.get("http://order-service-madhu.cfapps.io/orders/"+ customerId).then((response)=>{
+            console.log("in dispatch");
+            console.log("load order" + response.data);
+            dispatch(displayOrder(response.data));
+        })
+    }
+}
 
+export function displayOrder(orders){
+    return{
+        type:"DISPLAY_ORDER",
+        orders:orders
+    }
+}
 export function saveCustomer(id, name, addressLine1, addressLine2, age, postCode){
     const customer = {
     id: id,
@@ -52,5 +67,17 @@ export function deleteCustomer(id){
 export function removeCustomer(){
     return{
         type:"DELETE_CUSTOMER"
+    }
+}
+
+export function addOrder(customerId, orderName){
+    const order={
+        customerId : customerId,
+        orderName : orderName
+    }
+    return(dispatch)=>{
+        return axios.post("http://order-service-madhu.cfapps.io/orders", order).then((response) => {
+            console.log("Post success!");
+        })
     }
 }

@@ -17,7 +17,12 @@ if(action.type==="DISPLAY_CUSTOMER"){
         ...state,
         customers:action.customers
     }
-} else if(action.type==="ADD_CUSTOMER"){
+}else if(action.type==="DISPLAY_ORDER"){
+    return{
+        ...state ,
+        orders:action.orders
+    }
+ } else if(action.type==="ADD_CUSTOMER"){
     return{
         ...state 
     }
