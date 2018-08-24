@@ -49,7 +49,7 @@ export default class DisplayCustomer extends React.Component {
                     <span className="heading">Postcode:</span><span> {this.props.customer.postCode} </span><br />
                 </div>
                 <div id="actions">
-
+                <div>
                     <button onClick={this.toggleHidden.bind(this)} id="update-c"> Update</button>
                     <button onClick={() => { this.props.deleteClick(this.state.id) }} id="delete-c"> Delete</button>
                     <button onClick={this.orderHidden.bind(this)} > Add order</button>
@@ -59,18 +59,14 @@ export default class DisplayCustomer extends React.Component {
                 <div>
 
                     {!this.state.isHidden ? <div> <UpdateCustomerContainer customer={this.state} /><button onClick={this.toggleHidden.bind(this)} id="close"> close</button></div> : ""}
-                </div>
-
-                <div>
+                
 
                     {!this.state.isOrder ? <div> <CustomerOrderContainer customerId={this.state.id} /><button onClick={this.orderHidden.bind(this)} id="close"> close</button></div> : ""}
-                </div>
-
-                <div>
+               
 
                     {!this.state.isDisplayOrder ? <div> <DisplayOrderContainer customerId={this.state.id} /><button onClick={this.orderDisplayHidden.bind(this)} id="close"> close</button></div> : ""}
                 </div>
-
+                </div>
             </div>
         )
     }
