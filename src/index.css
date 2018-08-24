@@ -57,14 +57,15 @@ li:hover {
   border: 1px solid gray;
   margin : 5px;
   float: left;
-  width : 300px;
+  width : 500px;
 }
 
 #actions{
+  float: right;
   margin: 5px;
 }
 
-#update-c,#delete-c,#close, #update,#save-c{
+#update-c,#delete-c,#close, #update,#save-c, #order-c, #display-o{
   border: none;
   color: white;
   padding: 10px 16px;
@@ -79,6 +80,13 @@ li:hover {
   background-color: #4CAF50; /* Green */
 }
 
+#order-c{
+	background-color: rgb(19,93,204);
+}
+
+#display-o{
+	background-color: rgb(75,7,114);
+}
 #delete-c,#close{
   background-color: rgb(128, 16, 16);
 }
